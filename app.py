@@ -4,7 +4,8 @@ import joblib
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
-df = pd.read_csv(r"D:\MyProjcet\netflix\netflix_titles.csv")
+df = pd.read_csv("netflix_titles.csv")
+
 df['text'] = df['title'].astype(str) + ' ' + df['listed_in'].astype(str) + ' ' + df['description'].astype(str)
 
 model = joblib.load("model.pkl")
